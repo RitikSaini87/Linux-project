@@ -1,0 +1,14 @@
+Splay usage Summary echo "Disk Usage Summary:"
+df -h --total echo
+#List top 10 largest Directories echo"Top 10 Largest Directories:"
+du -ah / | sort -rh | head -n 10
+echo
+#check disk usage
+read -p "Enter a directory path to analyze (or press enter to skip): " dir if [-d "§dir" 1; then
+echo "Disk Usage for directory §dir: " du -sh "§dir"
+else
+echo "No Directory Specified or invalid directory."
+fi echo
+#find and list the top 10 largest files echo "Top 10 Largest Files:"
+find /-type f-exec du h {} + 2>/dev/null | sort -rh | head -n 10
+echo
